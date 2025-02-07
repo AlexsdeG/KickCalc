@@ -21,10 +21,8 @@ _A simple PowerShell CLI tool for calculating kick drum timing intervals based o
    - [`Run.bat`](Run.bat)
 
 2. **Run**:
-   ```bash
-   Double-click Run.bat
-   (First run may require approving PowerShell execution)
-   ```
+   - Double-click Run.bat
+   - (First run may require approving PowerShell execution)
 
 ---
 
