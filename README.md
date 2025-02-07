@@ -27,58 +27,58 @@ _A simple PowerShell CLI tool for calculating kick drum timing intervals based o
 ---
 
 ## 🕹️ Quick CLI Guide
-	```text
-	=== Main Menu ===
-	1. 🧮 Calculate Kick Timing
-	2. ⚙ Edit Configuration
-	3. 🚪 Exit
-	```
-	
-	**🔢 Calculation Flow**
-	1. Choose "Calculate" from main menu
-	2. Either:
-		- Select preset BPM from list, or
-		- Type custom BPM value
-	3. See instant result:
-		30000 ÷ [BPM] = [ms]
+```text
+=== Main Menu ===
+1. 🧮 Calculate Kick Timing
+2. ⚙ Edit Configuration
+3. 🚪 Exit
+```
 
-	**⚙ Configuration Options**
-	1. Edit Base Value: Change the 30,000 constant
-	2. Manage BPM Presets:
-		- Add new BPM values
-		- Remove existing entries
-		- Auto-sorted list
+**🔢 Calculation Flow**
+1. Choose "Calculate" from main menu
+2. Either:
+	- Select preset BPM from list, or
+	- Type custom BPM value
+3. See instant result:
+	30000 ÷ [BPM] = [ms]
+
+**⚙ Configuration Options**
+1. Edit Base Value: Change the 30,000 constant
+2. Manage BPM Presets:
+	- Add new BPM values
+	- Remove existing entries
+	- Auto-sorted list
 
 ---
 
 ## 🖥️ Example Calculation
-	```powershell
-	=== BPM Selection ===
-	1. 120 BPM
-	2. 128 BPM
-	3. 140 BPM
+```powershell
+=== BPM Selection ===
+1. 120 BPM
+2. 128 BPM
+3. 140 BPM
 
-	Enter: 
-	- Number from list
-	- Custom BPM
-	- 'b' to back
+Enter: 
+- Number from list
+- Custom BPM
+- 'b' to back
 
-	Your selection: 120
+Your selection: 120
 
-	=== Result ===
-	Base Value: 30000
-	BPM: 120
-	Time between kicks: 250 ms
-	Formula: 30000 ÷ 120 = 250
-	```
+=== Result ===
+Base Value: 30000
+BPM: 120
+Time between kicks: 250 ms
+Formula: 30000 ÷ 120 = 250
+```
 
 ---
 
 ## 💡 Future Ideas
-	- GUI version
-	- Multiple time signatures
-	- MIDI clock integration
-	- Export/import presets
+- GUI version
+- Multiple time signatures
+- MIDI clock integration
+- Export/import presets
 
 ---
 
