@@ -20,9 +20,13 @@ _A simple PowerShell CLI tool for calculating kick drum timing intervals based o
    - [`BpmCalculator.ps1`](BpmCalculator.ps1)
    - [`Run.bat`](Run.bat)
 
-2. **Run**:
+2. **Install**:
+   - Create a new Folder
+   - Move the files to this Folder
+     
+3. **Run**:
    - Double-click Run.bat
-   - (First run may require approving PowerShell execution)
+     (First run may require approving PowerShell execution)
 
 ---
 
