@@ -67,10 +67,15 @@ function Edit-BaseValue {
     Write-Host "Current Base Value: $($script:config.BaseValue)"
     $newValue = Read-Host "Enter new base value (number)"
     
+    # Validate input is a number and positive
     if ([double]::TryParse($newValue, [ref]$null)) {
-        $script:config.BaseValue = [math]::Round([double]$newValue, 2)
-        Save-Config
-        Write-Host "Base value updated!" -ForegroundColor Green
+        if ([double]$newValue -le 0) {
+            Write-Host "Base Value must be a positive number!" -ForegroundColor Red
+        } else {
+            $script:config.BaseValue = [math]::Round([double]$newValue, 2)
+            Save-Config
+            Write-Host "Base value updated!" -ForegroundColor Green
+        }
     }
     else {
         Write-Host "Invalid number format!" -ForegroundColor Red
@@ -104,10 +109,20 @@ function Add-Bpm {
     Clear-Host
     $newBpm = Read-Host "Enter new BPM value (number)"
     
-    if ([int]::TryParse($newBpm, [ref]$null) -and [int]$newBpm -gt 0) {
-        $script:config.BpmList += [int]$newBpm
-        Save-Config
-        Write-Host "BPM added!" -ForegroundColor Green
+    # Validate input is a number, greater than 50, and not already in the list
+    if ([int]::TryParse($newBpm, [ref]$null)) {
+        if ([int]$newBpm -le 50) {
+            Write-Host "BPM must be greater than 50!" -ForegroundColor Red
+        }
+        elseif ($script:config.BpmList -contains [int]$newBpm) {
+            Write-Host "BPM already exists in the list!" -ForegroundColor Red
+        }
+        else {
+            $script:config.BpmList += [int]$newBpm
+            $script:config.BpmList = $script:config.BpmList | Sort-Object
+            Save-Config
+            Write-Host "BPM added!" -ForegroundColor Green
+        }
     }
     else {
         Write-Host "Invalid BPM value!" -ForegroundColor Red
@@ -196,7 +211,7 @@ function Show-Calculation-Menu {
     Write-Host "=== Calculation Result ==="
     Write-Host "Base Value: $($script:config.BaseValue)"
     Write-Host "BPM: $bpm"
-    Write-Host "Time between kicks: $time ms"
+    Write-Host "Time between kicks: $time ms" -ForegroundColor Green
     Write-Host "`nFormula: $($script:config.BaseValue) / $bpm = $time"
     
     pause
