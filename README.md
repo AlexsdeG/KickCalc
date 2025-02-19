@@ -33,7 +33,7 @@ _A simple PowerShell CLI tool for calculating kick drum timing intervals based o
 ## 🕹️ Quick CLI Guide
 ```text
 === Main Menu ===
-1. 🧮 Calculate Kick Timing
+1. 🧮 Calculate Kick Timing (default entry)
 2. ⚙ Edit Configuration
 3. 🚪 Exit
 ```
