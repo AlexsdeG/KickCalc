@@ -215,11 +215,13 @@ function Show-Calculation-Menu {
     Write-Host "`nFormula: $($script:config.BaseValue) / $bpm = $time"
     
     pause
-    Show-MainMenu
+    # Show-MainMenu
+    Show-Calculation-Menu
 }
 
 # Main execution flow
 Load-Config
 while ($true) {
-    Show-MainMenu
+    # Show-MainMenu
+    Show-Calculation-Menu
 }
